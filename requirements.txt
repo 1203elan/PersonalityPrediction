@@ -2,4 +2,6 @@ flask
 wtforms
 nltk
 numpy
+gunicorn
+huggingface_hub
 scikit-learn
