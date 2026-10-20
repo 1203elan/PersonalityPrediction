@@ -162,6 +162,22 @@ def classify(trait,model,text):
             proba_E=np.max(clf_E.predict_proba(text))
             proba_N=np.max(clf_N.predict_proba(text))
             proba_O=np.max(clf_O.predict_proba(text))
+        elif model=='KNN':
+            clf_A= pickle.load(open(os.path.join("PersonalityClassifier",'pkl_objects', 'OCEANclassifier_KNN_A.pkl'), 'rb'))
+            clf_C= pickle.load(open(os.path.join("PersonalityClassifier",'pkl_objects', 'OCEANclassifier_KNN_C.pkl'), 'rb'))
+            clf_E= pickle.load(open(os.path.join("PersonalityClassifier",'pkl_objects', 'OCEANclassifier_KNN_E.pkl'), 'rb'))
+            clf_N= pickle.load(open(os.path.join("PersonalityClassifier",'pkl_objects', 'OCEANclassifier_KNN_N.pkl'), 'rb'))
+            clf_O= pickle.load(open(os.path.join("PersonalityClassifier",'pkl_objects', 'OCEANclassifier_KNN_O.pkl'), 'rb'))
+            pred_A=clf_A.predict(text)[0]
+            pred_C=clf_C.predict(text)[0]
+            pred_E=clf_E.predict(text)[0]
+            pred_N=clf_N.predict(text)[0]
+            pred_O=clf_O.predict(text)[0]
+            proba_A=np.max(clf_A.predict_proba(text))
+            proba_C=np.max(clf_C.predict_proba(text))
+            proba_E=np.max(clf_E.predict_proba(text))
+            proba_N=np.max(clf_N.predict_proba(text))
+            proba_O=np.max(clf_O.predict_proba(text))
             return pred_A, pred_C, pred_E, pred_N, pred_O, proba_A, proba_C, proba_E, proba_N, proba_O
         elif model=='MLP':
             clf_A= pickle.load(open(os.path.join("PersonalityClassifier",'pkl_objects', 'OCEANclassifier_MLP_A.pkl'), 'rb'))
