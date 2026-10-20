@@ -1,0 +1,5 @@
+flask
+wtforms
+nltk
+numpy
+scikit-learn
