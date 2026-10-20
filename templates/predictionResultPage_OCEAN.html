@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        *{
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body{
+            background: url("{{ url_for('static', filename='background.jpg') }}");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1> Prediction Results </h1>
+    <h3> Agreeableness: </h3>
+    <p> You are {{proba_A}} percent a {{traits[pred_A]}} Agreeable person</p>
+    <h3> Conscientiousness: </h3>
+    <p> You are {{proba_C}} percent a {{traits[pred_C]}} Conscientious person</p>
+    <h3> Extraversion: </h3>
+    <p> You are {{proba_A}} percent a {{traits[pred_A]}} Extraverted person</p>
+    <h3> Neuroticism: </h3>
+    <p> You are {{proba_A}} percent a {{traits[pred_A]}} Neurotic person</p>
+    <h3> Openness: </h3>
+    <p> You are {{proba_A}} percent a {{traits[pred_A]}} Open person</p>
+    <form action="/">
+        <input type="submit" value="Resubmit">
+    </form>
+</body>
+</html>

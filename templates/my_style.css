@@ -1,0 +1,27 @@
+.class1{
+    font-size: 50px;
+    font-family: helvetica;
+    color:blue;
+}
+.class2{
+    background-color: yellow;
+    color: blue;
+}
+.class3{
+    border: 2px solid green;
+}
+body.class4{
+    background-color:yellow;
+}
+h1.class4{
+    font:courier;
+}
+p.class4{
+    font:courier;
+    color:red;
+    border:2px solid red;
+}
+table,th,td{ 
+    border: 1px solid black;
+    border-collapse: collapse;
+}

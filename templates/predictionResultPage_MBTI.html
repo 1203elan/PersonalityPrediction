@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        *{
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body{
+            background: url("{{ url_for('static', filename='background.jpg') }}");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1> Prediction Results </h1>
+    <p> Your personality type is: <b> {{ pred_IE+pred_NS+pred_TF+pred_JP }} </b></p>
+    <h3> Introversion(I)/Extraversion(E): </h3>
+    <p> You are {{proba_IE}}% percent a more {{traits[pred_IE]}} person </p>
+    <h3> Intuition(N)/Sensing(S): </h3>
+    <p> You are {{proba_NS}}% percent a more {{traits[pred_NS]}} person</p>
+    <h3> Thinking(T)/Feeling(F): </h3>
+    <p> You are {{proba_TF}}% percent a more {{traits[pred_TF]}} person</p>
+    <h3> Judging(J)/Perceiving(P): </h3>
+    <p> You are {{proba_JP}}% percent a more {{traits[pred_JP]}} person</p>
+    <form action="/">
+        <input type="submit" value="Resubmit">
+    </form>
+</body>
+</html>
