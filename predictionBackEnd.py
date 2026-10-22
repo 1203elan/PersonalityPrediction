@@ -184,7 +184,7 @@ app=Flask(__name__)
 @app.route('/')
 def index():
     form=inputform(request.form)
-    return render_template('predictionFrontPage.html',form=form)
+    return render_template('index.html',form=form)
 @app.route('/results', methods=['POST'])
 def results():
     form=inputform(request.form)
@@ -202,6 +202,6 @@ def results():
             traits={1:'more',0:'less'}
             return render_template('predictionResultPage_OCEAN.html', pred_A=pred_A, pred_C=pred_C, pred_E=pred_E, pred_N=pred_N, pred_O=pred_O,
                                    proba_A=int(proba_A*100), proba_C=int(proba_C*100), proba_E=int(proba_E*100), proba_N=int(proba_N*100), proba_O=int(proba_O*100), traits=traits)
-    return render_template('predictionFrontPage.html',form=form)
+    return render_template('index.html',form=form)
 if __name__=='__main__':
     app.run()
