@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        *{
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body{
+            background: url("{{ url_for('static', filename='background.jpg') }}");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    {% from "_formhelpers.html" import render_field %}
+    <h1> Personality Prediction </h1>
+    <p> Support automatic prediction for the Big Five and MBTI personality traits based on text </p>
+    <h3> Why personality </h3>
+    <p> Personality plays important roles in academic and occupational success, personal relationships, and psychological well-being.</p>
+    <p> Everyone should care about their personality for a better life.</p>
+    <form method="post" action="/results">
+        Personality traits: {{ render_field(form.traitselection) }} <br>
+        Model selection: {{ render_field(form.modelselection) }} <br>
+        {{ render_field(form.textinput, style="width: 800px; height: 500px; padding: 15px; text-align:left; background-color:rgb(180, 196, 224)") }}<br>
+        <input type="submit" name="submit" value="Get the result">
+    </form>
+</body>
+</html>
