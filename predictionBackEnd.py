@@ -8,8 +8,6 @@ import urllib.request
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-if not os.path.exists(MODEL_PATH):
-    urllib.request.urlretrieve("https://drive.google.com/drive/folders/1IIJ729bC1mpbNAGp_9ph8u1Mb2riVaYQ?usp=drive_link", MODEL_PATH)
 class inputform(Form):
     traitselection=SelectField('', [validators.DataRequired()], choices=[
         ('OCEAN','the Big Five'),
