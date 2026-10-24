@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b93d3eb44e199e494b6adc0496b9750afffef957858269d38d3acbc51feb1145
-size 63
+flask
+wtforms
+nltk
+numpy
+gunicorn
+huggingface_hub
+scikit-learn
